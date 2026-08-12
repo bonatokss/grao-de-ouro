@@ -1,1109 +1,321 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Grão de Ouro | Tecnologia para a Cafeicultura</title>
+    <title>Grão Dourado | Tecnologia para a Cafeicultura</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #f7f3ea;
-            color: #3e2a1f;
-        }
-
-        /* CABEÇALHO */
-
-        header {
-            background: #3e2417;
-            color: white;
-            padding: 15px 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .logo span {
-            color: #d9a441;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #d9a441;
-        }
-
-        .btn-cadastro {
-            background: #d9a441;
-            padding: 10px 18px;
-            border-radius: 8px;
-            color: #3e2417 !important;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            padding: 60px 8%;
-            background:
-                linear-gradient(rgba(43, 28, 18, 0.72), rgba(43, 28, 18, 0.72)),
-                url("https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1600&q=80");
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
-
-        .hero-content {
-            max-width: 700px;
-        }
-
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #e3b04b;
-        }
-
-        .hero p {
-            font-size: 20px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: #d9a441;
-            color: #3e2417;
-        }
-
-        .btn-primary:hover {
-            background: #efc56d;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            border: 2px solid white;
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: #3e2417;
-        }
-
-        /* SEÇÕES */
-
-        section {
-            padding: 70px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-            color: #3e2417;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #6b5a4d;
-            font-size: 17px;
-        }
-
-        /* SOBRE */
-
-        .sobre {
-            background: #fffdf8;
-        }
-
-        .sobre-container {
-            max-width: 1100px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .sobre-texto h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #5b351f;
-        }
-
-        .sobre-texto p {
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-        .sobre-img {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .sobre-img img {
-            width: 100%;
-            display: block;
-        }
-
-        /* FUNCIONALIDADES */
-
-        .funcionalidades {
-            background: #f0eadc;
-        }
-
-        .cards {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .card-icon {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            margin-bottom: 12px;
-            color: #4d2e1e;
-        }
-
-        .card p {
-            line-height: 1.6;
-            color: #66574c;
-        }
-
-        /* CLIMA */
-
-        .clima {
-            background: #fffdf8;
-        }
-
-        .clima-box {
-            max-width: 1000px;
-            margin: auto;
-            background: linear-gradient(135deg, #5a351f, #8a5a35);
-            color: white;
-            padding: 40px;
-            border-radius: 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .clima-info h3 {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
-
-        .clima-info p {
-            line-height: 1.7;
-        }
-
-        .clima-card {
-            background: rgba(255,255,255,0.12);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        .temperatura {
-            font-size: 55px;
-            font-weight: bold;
-            color: #ffd56b;
-        }
-
-        /* ALERTAS */
-
-        .alertas {
-            background: #f0eadc;
-        }
-
-        .alerta-box {
-            max-width: 900px;
-            margin: auto;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            background: #fff;
-            border-left: 7px solid #d49a2e;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .alerta-icon {
-            font-size: 45px;
-        }
-
-        /* CADASTRO */
-
-        .cadastro {
-            background: #fffdf8;
-        }
-
-        .form-container {
-            max-width: 650px;
-            margin: auto;
-            background: white;
-            padding: 40px;
-            border-radius: 18px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 7px;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 13px;
-            border: 1px solid #ccc;
-            border-radius: 7px;
-            outline: none;
-            font-size: 15px;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: #8a5a35;
-        }
-
-        .btn-form {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            background: #5a351f;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-form:hover {
-            background: #8a5a35;
-        }
-
-        /* FALE CONOSCO */
-
-        .contato {
-            background: #3e2417;
-            color: white;
-        }
-
-        .contato .section-title h2 {
-            color: white;
-        }
-
-        .contato .section-title p {
-            color: #ddd;
-        }
-
-        .contato-container {
-            max-width: 1000px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 35px;
-        }
-
-        .contato-info {
-            padding: 25px;
-        }
-
-        .contato-info h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #e3b04b;
-        }
-
-        .contato-info p {
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-
-        .contato-form {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            color: #3e2417;
-        }
-
-        /* RODAPÉ */
-
-        footer {
-            background: #29180f;
-            color: #ddd;
-            text-align: center;
-            padding: 25px;
-        }
-
-        footer strong {
-            color: #e3b04b;
-        }
-
-        /* RESPONSIVIDADE */
-
-        @media (max-width: 900px) {
-
-            nav ul {
-                gap: 12px;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .sobre-container,
-            .clima-box,
-            .contato-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 650px) {
-
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero {
-                min-height: 520px;
-                padding: 40px 6%;
-            }
-
-            .hero h1 {
-                font-size: 35px;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
-            section {
-                padding: 50px 6%;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .form-container {
-                padding: 25px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- CABEÇALHO -->
+<header>
 
-    <header>
+    <div class="logo">
+        ☕ Grão <span>Dourado</span>
+    </div>
 
-        <div class="logo">
-            ☕ Grão de <span>Ouro</span>
-        </div>
+    <nav>
 
-        <nav>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#recursos">Recursos</a></li>
-                <li><a href="#clima">Clima</a></li>
-                <li><a href="#contato">Fale Conosco</a></li>
-                <li><a href="#cadastro" class="btn-cadastro">Cadastro</a></li>
-            </ul>
-        </nav>
+        <ul>
 
-    </header>
-
-
-    <!-- INÍCIO -->
-
-    <section class="hero" id="inicio">
-
-        <div class="hero-content">
-
-            <h1>
-                Tecnologia para o seu
-                <span>café.</span>
-            </h1>
-
-            <p>
-                O Grão de Ouro ajuda pequenos cafeicultores
-                de Ribeirão Claro e região a cuidar melhor
-                de suas plantações utilizando tecnologia,
-                informações climáticas e inteligência artificial.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#cadastro" class="btn btn-primary">
-                    Criar minha conta
+            <li>
+                <a href="index.html" class="active">
+                    Início
                 </a>
+            </li>
 
-                <a href="#recursos" class="btn btn-secondary">
-                    Conheça a plataforma
+            <li>
+                <a href="sobre.html">
+                    Sobre
                 </a>
+            </li>
 
-            </div>
+            <li>
+                <a href="recursos.html">
+                    Recursos
+                </a>
+            </li>
 
-        </div>
+            <li>
+                <a href="contato.html">
+                    Fale Conosco
+                </a>
+            </li>
 
-    </section>
+            <li>
+                <a href="cadastro.html" class="btn-cadastro">
+                    Cadastro
+                </a>
+            </li>
 
+        </ul>
 
-    <!-- SOBRE -->
+    </nav>
 
-    <section class="sobre" id="sobre">
+</header>
 
-        <div class="section-title">
 
-            <h2>O que é o Grão de Ouro?</h2>
+<section class="hero">
 
-            <p>
-                Tecnologia e informação trabalhando junto com o produtor.
-            </p>
+    <div class="hero-content">
 
-        </div>
-
-        <div class="sobre-container">
-
-            <div class="sobre-texto">
-
-                <h3>Uma nova forma de cuidar da cafeicultura</h3>
-
-                <p>
-                    O Grão de Ouro é uma plataforma web desenvolvida
-                    para auxiliar os cafeicultores de Ribeirão Claro
-                    na identificação de problemas nas plantações e
-                    no acompanhamento das condições climáticas.
-                </p>
-
-                <p>
-                    A proposta é utilizar tecnologia e inteligência
-                    artificial para facilitar o dia a dia do produtor,
-                    melhorar a tomada de decisões e contribuir para
-                    a prevenção de perdas.
-                </p>
-
-                <p>
-                    Tudo isso de maneira simples, acessível e pensada
-                    para funcionar diretamente pelo celular.
-                </p>
-
-            </div>
-
-            <div class="sobre-img">
-
-                <img
-                    src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80"
-                    alt="Café">
-                    
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- RECURSOS -->
-
-    <section class="funcionalidades" id="recursos">
-
-        <div class="section-title">
-
-            <h2>Recursos da plataforma</h2>
-
-            <p>
-                Soluções pensadas para facilitar o trabalho no campo.
-            </p>
-
-        </div>
-
-        <div class="cards">
-
-            <div class="card">
-
-                <div class="card-icon">🌦️</div>
-
-                <h3>Informações Climáticas</h3>
-
-                <p>
-                    Consulte temperatura, previsão do tempo e
-                    condições climáticas que podem representar
-                    riscos para sua plantação.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">🤖</div>
-
-                <h3>Identificação de Doenças</h3>
-
-                <p>
-                    Envie uma foto de uma folha ou fruto do café
-                    para que a inteligência artificial possa
-                    identificar possíveis doenças ou alterações.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">📱</div>
-
-                <h3>Acesso pelo Celular</h3>
-
-                <p>
-                    Consulte as informações diretamente no campo,
-                    utilizando seu celular e sem a necessidade
-                    de equipamentos específicos.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">⚠️</div>
-
-                <h3>Alertas e Prevenção</h3>
-
-                <p>
-                    Receba alertas sobre situações climáticas
-                    que podem afetar sua produção e tome medidas
-                    preventivas.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">💬</div>
-
-                <h3>Integração com WhatsApp</h3>
-
-                <p>
-                    Receba alertas e orientações através de uma
-                    ferramenta que já faz parte do cotidiano
-                    de muitos produtores.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">📊</div>
-
-                <h3>Acompanhamento</h3>
-
-                <p>
-                    No futuro, acompanhe o histórico da plantação,
-                    produção, doenças e outras informações
-                    importantes para sua propriedade.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CLIMA -->
-
-    <section class="clima" id="clima">
-
-        <div class="section-title">
-
-            <h2>Monitoramento climático</h2>
-
-            <p>
-                Acompanhe as condições do clima para tomar melhores decisões.
-            </p>
-
-        </div>
-
-        <div class="clima-box">
-
-            <div class="clima-info">
-
-                <h3>🌦️ Clima para o cafeicultor</h3>
-
-                <p>
-                    O acompanhamento das condições climáticas pode
-                    ajudar o produtor a se preparar para períodos
-                    de chuva, temperaturas elevadas, frio e outras
-                    situações que possam afetar a lavoura.
-                </p>
-
-            </div>
-
-            <div class="clima-card">
-
-                <div style="font-size: 45px;">☀️</div>
-
-                <div class="temperatura">24°C</div>
-
-                <p>Condição atual</p>
-
-                <p style="margin-top: 10px;">
-                    Ribeirão Claro - PR
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ALERTAS -->
-
-    <section class="alertas">
-
-        <div class="section-title">
-
-            <h2>Alertas para prevenção</h2>
-
-            <p>
-                Informação antecipada para ajudar a proteger sua produção.
-            </p>
-
-        </div>
-
-        <div class="alerta-box">
-
-            <div class="alerta-icon">⚠️</div>
-
-            <div>
-
-                <h3>Atenção às condições climáticas</h3>
-
-                <p>
-                    O Grão de Ouro poderá utilizar dados climáticos
-                    para identificar situações que possam representar
-                    riscos à produção e informar o produtor com
-                    antecedência.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CADASTRO -->
-
-    <section class="cadastro" id="cadastro">
-
-        <div class="section-title">
-
-            <h2>Crie sua conta</h2>
-
-            <p>
-                Cadastre-se no Grão de Ouro para acompanhar sua produção.
-            </p>
-
-        </div>
-
-        <div class="form-container">
-
-            <form id="formCadastro">
-
-                <div class="form-group">
-
-                    <label for="nome">Nome completo</label>
-
-                    <input
-                        type="text"
-                        id="nome"
-                        placeholder="Digite seu nome"
-                        required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="email">E-mail</label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Digite seu e-mail"
-                        required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="telefone">Telefone</label>
-
-                    <input
-                        type="tel"
-                        id="telefone"
-                        placeholder="(00) 00000-0000"
-                        required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="cidade">Cidade</label>
-
-                    <input
-                        type="text"
-                        id="cidade"
-                        placeholder="Ex.: Ribeirão Claro"
-                        required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="tipo">Você é:</label>
-
-                    <select id="tipo" required>
-
-                        <option value="">
-                            Selecione uma opção
-                        </option>
-
-                        <option>
-                            Pequeno cafeicultor
-                        </option>
-
-                        <option>
-                            Produtor rural
-                        </option>
-
-                        <option>
-                            Técnico agrícola
-                        </option>
-
-                        <option>
-                            Outro
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="senha">Senha</label>
-
-                    <input
-                        type="password"
-                        id="senha"
-                        placeholder="Crie uma senha"
-                        required>
-
-                </div>
-
-
-                <button type="submit" class="btn-form">
-                    Criar cadastro
-                </button>
-
-            </form>
-
-        </div>
-
-    </section>
-
-
-    <!-- FALE CONOSCO -->
-
-    <section class="contato" id="contato">
-
-        <div class="section-title">
-
-            <h2>Fale Conosco</h2>
-
-            <p>
-                Tem dúvidas, sugestões ou precisa de ajuda?
-                Entre em contato com a equipe Grão de Ouro.
-            </p>
-
-        </div>
-
-        <div class="contato-container">
-
-            <div class="contato-info">
-
-                <h3>Vamos conversar? ☕</h3>
-
-                <p>
-                    Estamos trabalhando para desenvolver uma
-                    plataforma cada vez mais útil para os
-                    cafeicultores de Ribeirão Claro e região.
-                </p>
-
-                <p>
-                    Envie sua dúvida, sugestão ou comentário.
-                    Sua opinião pode ajudar a melhorar o projeto.
-                </p>
-
-                <p>
-                    📍 Ribeirão Claro - Paraná
-                </p>
-
-                <p>
-                    📧 contato@graodeouro.com
-                </p>
-
-                <p>
-                    💬 WhatsApp: (43) 99999-9999
-                </p>
-
-            </div>
-
-
-            <div class="contato-form">
-
-                <form id="formContato">
-
-                    <div class="form-group">
-
-                        <label for="nomeContato">
-                            Nome
-                        </label>
-
-                        <input
-                            type="text"
-                            id="nomeContato"
-                            placeholder="Seu nome"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="emailContato">
-                            E-mail
-                        </label>
-
-                        <input
-                            type="email"
-                            id="emailContato"
-                            placeholder="Seu e-mail"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="assunto">
-                            Assunto
-                        </label>
-
-                        <input
-                            type="text"
-                            id="assunto"
-                            placeholder="Como podemos ajudar?"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="mensagem">
-                            Mensagem
-                        </label>
-
-                        <textarea
-                            id="mensagem"
-                            rows="5"
-                            placeholder="Digite sua mensagem..."
-                            required></textarea>
-
-                    </div>
-
-
-                    <button type="submit" class="btn-form">
-                        Enviar mensagem
-                    </button>
-
-                </form>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- RODAPÉ -->
-
-    <footer>
+        <h1>
+            Tecnologia para o seu
+            <span>café.</span>
+        </h1>
 
         <p>
-            © 2026 <strong>Grão de Ouro</strong> -
-            Tecnologia a favor da cafeicultura.
+            O Grão Dourado é uma plataforma criada para
+            aproximar tecnologia e cafeicultura, ajudando
+            pequenos produtores a tomar decisões melhores
+            no dia a dia da propriedade.
         </p>
 
-        <p style="margin-top: 8px;">
-            Ribeirão Claro - Paraná
+        <p>
+            Tenha acesso a informações climáticas,
+            identificação de possíveis problemas nas
+            plantações, alertas e ferramentas pensadas
+            especialmente para o produtor rural.
         </p>
 
-    </footer>
+        <div class="hero-buttons">
+
+            <a href="cadastro.html" class="btn btn-primary">
+                Criar minha conta
+            </a>
+
+            <a href="recursos.html" class="btn btn-secondary">
+                Conhecer os recursos
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- JAVASCRIPT -->
+<section class="sobre">
 
-    <script>
+    <div class="section-title">
 
-        // FORMULÁRIO DE CADASTRO
+        <h2>
+            Tecnologia que entende o campo
+        </h2>
 
-        document
-            .getElementById("formCadastro")
-            .addEventListener("submit", function(event) {
+        <p>
+            Informação simples para decisões mais inteligentes.
+        </p>
 
-                event.preventDefault();
+    </div>
 
-                const nome =
-                    document.getElementById("nome").value;
+    <div class="cards">
 
-                alert(
-                    "Cadastro realizado com sucesso, " +
-                    nome +
-                    "!"
-                );
+        <div class="card">
 
-                this.reset();
+            <div class="card-icon">🌱</div>
 
-            });
+            <h3>
+                Cuidado com a lavoura
+            </h3>
+
+            <p>
+                Acompanhe informações importantes para
+                entender melhor as condições da sua
+                plantação e agir preventivamente.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">🌦️</div>
+
+            <h3>
+                Informações climáticas
+            </h3>
+
+            <p>
+                Consulte condições do tempo e acompanhe
+                situações climáticas que podem influenciar
+                o desenvolvimento do café.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">🤖</div>
+
+            <h3>
+                Inteligência artificial
+            </h3>
+
+            <p>
+                A tecnologia poderá auxiliar na análise
+                de imagens de folhas e frutos para indicar
+                possíveis problemas.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-        // FORMULÁRIO DE CONTATO
+<section class="passos">
 
-        document
-            .getElementById("formContato")
-            .addEventListener("submit", function(event) {
+    <div class="section-title">
 
-                event.preventDefault();
+        <h2>
+            Como o Grão Dourado funciona?
+        </h2>
 
-                alert(
-                    "Mensagem enviada com sucesso! " +
-                    "Nossa equipe entrará em contato."
-                );
+        <p>
+            Uma plataforma pensada para ser simples.
+        </p>
 
-                this.reset();
+    </div>
 
-            });
+    <div class="passos-grid">
 
-    </script>
+        <div class="passo">
+
+            <div class="numero">1</div>
+
+            <h3>
+                Cadastre-se
+            </h3>
+
+            <p>
+                Crie sua conta informando seus dados
+                e informações básicas sobre sua atividade.
+            </p>
+
+        </div>
+
+        <div class="passo">
+
+            <div class="numero">2</div>
+
+            <h3>
+                Acompanhe
+            </h3>
+
+            <p>
+                Consulte informações climáticas,
+                alertas e ferramentas disponíveis.
+            </p>
+
+        </div>
+
+        <div class="passo">
+
+            <div class="numero">3</div>
+
+            <h3>
+                Tome decisões
+            </h3>
+
+            <p>
+                Utilize as informações para planejar
+                melhor as atividades da propriedade.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="diferenciais">
+
+    <div class="section-title">
+
+        <h2>
+            Por que utilizar o Grão Dourado?
+        </h2>
+
+        <p>
+            Uma proposta voltada para as necessidades do produtor.
+        </p>
+
+    </div>
+
+    <div class="diferenciais-grid">
+
+        <div class="diferencial">
+
+            <h3>📱 Fácil de usar</h3>
+
+            <p>
+                A plataforma foi pensada para funcionar
+                de maneira simples e acessível pelo celular.
+            </p>
+
+        </div>
+
+        <div class="diferencial">
+
+            <h3>☕ Foco na cafeicultura</h3>
+
+            <p>
+                As funcionalidades são direcionadas para
+                situações encontradas no cultivo do café.
+            </p>
+
+        </div>
+
+        <div class="diferencial">
+
+            <h3>⚠️ Prevenção</h3>
+
+            <p>
+                Informações antecipadas podem ajudar
+                o produtor a se preparar para situações
+                que representem riscos.
+            </p>
+
+        </div>
+
+        <div class="diferencial">
+
+            <h3>💡 Tecnologia acessível</h3>
+
+            <p>
+                O objetivo é aproximar recursos tecnológicos
+                do pequeno produtor rural.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 <strong>Grão Dourado</strong> -
+        Tecnologia a favor da cafeicultura.
+    </p>
+
+    <p>
+        Ribeirão Claro - Paraná
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

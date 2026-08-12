@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro | Grão Dourado</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        ☕ Grão <span>Dourado</span>
+    </div>
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Início
+                </a>
+            </li>
+
+            <li>
+                <a href="sobre.html">
+                    Sobre
+                </a>
+            </li>
+
+            <li>
+                <a href="recursos.html">
+                    Recursos
+                </a>
+            </li>
+
+            <li>
+                <a href="contato.html">
+                    Fale Conosco
+                </a>
+            </li>
+
+            <li>
+                <a href="cadastro.html"
+                   class="btn-cadastro active">
+                    Cadastro
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<section class="page-hero">
+
+    <h1>
+        Crie sua <span>conta</span>
+    </h1>
+
+    <p>
+        Cadastre-se para fazer parte do Grão Dourado
+        e acompanhar as novidades da plataforma.
+    </p>
+
+</section>
+
+
+<section class="cadastro">
+
+    <div class="section-title">
+
+        <h2>
+            Cadastro do produtor
+        </h2>
+
+        <p>
+            Preencha seus dados para criar sua conta.
+        </p>
+
+    </div>
+
+
+    <div class="form-container">
+
+        <form id="formCadastro">
+
+            <div class="form-group">
+
+                <label for="nome">
+                    Nome completo
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Digite seu nome completo"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu e-mail"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="telefone">
+                    Telefone
+                </label>
+
+                <input
+                    type="tel"
+                    id="telefone"
+                    placeholder="(00) 00000-0000"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="cidade">
+                    Cidade
+                </label>
+
+                <input
+                    type="text"
+                    id="cidade"
+                    placeholder="Ex.: Ribeirão Claro"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="propriedade">
+                    Nome da propriedade
+                </label>
+
+                <input
+                    type="text"
+                    id="propriedade"
+                    placeholder="Nome da sua propriedade">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="tipo">
+                    Você é:
+                </label>
+
+                <select id="tipo" required>
+
+                    <option value="">
+                        Selecione uma opção
+                    </option>
+
+                    <option>
+                        Pequeno cafeicultor
+                    </option>
+
+                    <option>
+                        Produtor rural
+                    </option>
+
+                    <option>
+                        Técnico agrícola
+                    </option>
+
+                    <option>
+                        Estudante
+                    </option>
+
+                    <option>
+                        Outro
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="area">
+                    Área aproximada da plantação
+                </label>
+
+                <input
+                    type="text"
+                    id="area"
+                    placeholder="Ex.: 5 hectares">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="senha">
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Crie uma senha"
+                    minlength="6"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="confirmarSenha">
+                    Confirmar senha
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmarSenha"
+                    placeholder="Digite a senha novamente"
+                    minlength="6"
+                    required>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn-form">
+
+                Criar cadastro
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<section class="diferenciais">
+
+    <div class="section-title">
+
+        <h2>
+            Depois do cadastro
+        </h2>
+
+        <p>
+            O produtor poderá ter acesso às funcionalidades
+            disponibilizadas pela plataforma.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">
+                🌦️
+            </div>
+
+            <h3>
+                Consulte o clima
+            </h3>
+
+            <p>
+                Acompanhe informações climáticas
+                importantes para a propriedade.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🤖
+            </div>
+
+            <h3>
+                Utilize a IA
+            </h3>
+
+            <p>
+                Utilize ferramentas de inteligência
+                artificial para auxiliar na análise
+                de imagens.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                ⚠️
+            </div>
+
+            <h3>
+                Receba alertas
+            </h3>
+
+            <p>
+                Tenha acesso a informações e alertas
+                relacionados às condições da lavoura.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 <strong>Grão Dourado</strong> -
+        Tecnologia a favor da cafeicultura.
+    </p>
+
+    <p>
+        Ribeirão Claro - Paraná
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
