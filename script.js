@@ -344,3 +344,286 @@ if (paginaPainel === "painel.html") {
     }
 
 }
+
+// ==============================
+// CLIMA REAL - RIBEIRÃO CLARO
+// ==============================
+
+async function carregarClima() {
+
+    // Coordenadas de Ribeirão Claro - PR
+    const latitude = -23.1936;
+    const longitude = -49.7597;
+
+    const url =
+        `https://api.open-meteo.com/v1/forecast?` +
+        `latitude=${latitude}` +
+        `&longitude=${longitude}` +
+        `&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m` +
+        `&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max` +
+        `&timezone=America%2FSao_Paulo` +
+        `&forecast_days=4`;
+
+    try {
+
+        const resposta = await fetch(url);
+
+        if (!resposta.ok) {
+            throw new Error("Erro ao buscar clima");
+        }
+
+        const dados = await resposta.json();
+
+
+        // ==============================
+        // CLIMA ATUAL
+        // ==============================
+
+        const temperatura =
+            document.getElementById("temperatura");
+
+        const condicao =
+            document.getElementById("condicao");
+
+        const icone =
+            document.getElementById("climaIcone");
+
+
+        if (temperatura) {
+
+            temperatura.textContent =
+                Math.round(
+                    dados.current.temperature_2m
+                ) + "°C";
+
+        }
+
+
+        if (condicao) {
+
+            condicao.textContent =
+                traduzirClima(
+                    dados.current.weather_code
+                );
+
+        }
+
+
+        if (icone) {
+
+            icone.textContent =
+                iconeClima(
+                    dados.current.weather_code
+                );
+
+        }
+
+
+        // ==============================
+        // PREVISÃO
+        // ==============================
+
+        const dias = [
+            "hoje",
+            "amanha",
+            "depois",
+            "dia3"
+        ];
+
+
+        dias.forEach(function(id, index) {
+
+            const elemento =
+                document.getElementById(id);
+
+            if (!elemento) return;
+
+
+            const maxima =
+                Math.round(
+                    dados.daily.temperature_2m_max[index]
+                );
+
+            const minima =
+                Math.round(
+                    dados.daily.temperature_2m_min[index]
+                );
+
+            const chuva =
+                dados.daily.precipitation_probability_max[index];
+
+
+            elemento.textContent =
+                `${minima}° / ${maxima}° 🌧️ ${chuva}%`;
+
+        });
+
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao carregar clima:",
+            erro
+        );
+
+
+        const condicao =
+            document.getElementById("condicao");
+
+        if (condicao) {
+
+            condicao.textContent =
+                "Não foi possível carregar o clima.";
+
+        }
+
+    }
+
+}
+
+
+// ==============================
+// TRADUZIR CÓDIGO DO CLIMA
+// ==============================
+
+function traduzirClima(codigo) {
+
+    if (codigo === 0) {
+        return "Céu limpo";
+    }
+
+    if (codigo === 1 ||
+        codigo === 2 ||
+        codigo === 3) {
+
+        return "Parcialmente nublado";
+
+    }
+
+    if (codigo === 45 ||
+        codigo === 48) {
+
+        return "Neblina";
+
+    }
+
+    if (
+        codigo >= 51 &&
+        codigo <= 57
+    ) {
+
+        return "Chuvisco";
+
+    }
+
+    if (
+        codigo >= 61 &&
+        codigo <= 67
+    ) {
+
+        return "Chuva";
+
+    }
+
+    if (
+        codigo >= 71 &&
+        codigo <= 77
+    ) {
+
+        return "Neve";
+
+    }
+
+    if (
+        codigo >= 80 &&
+        codigo <= 82
+    ) {
+
+        return "Pancadas de chuva";
+
+    }
+
+    if (
+        codigo >= 95 &&
+        codigo <= 99
+    ) {
+
+        return "Trovoada";
+
+    }
+
+    return "Condição desconhecida";
+
+}
+
+
+// ==============================
+// ÍCONE DO CLIMA
+// ==============================
+
+function iconeClima(codigo) {
+
+    if (codigo === 0) {
+        return "☀️";
+    }
+
+    if (
+        codigo >= 1 &&
+        codigo <= 3
+    ) {
+
+        return "🌤️";
+
+    }
+
+    if (
+        codigo === 45 ||
+        codigo === 48
+    ) {
+
+        return "🌫️";
+
+    }
+
+    if (
+        codigo >= 51 &&
+        codigo <= 67
+    ) {
+
+        return "🌧️";
+
+    }
+
+    if (
+        codigo >= 80 &&
+        codigo <= 82
+    ) {
+
+        return "🌦️";
+
+    }
+
+    if (
+        codigo >= 95
+    ) {
+
+        return "⛈️";
+
+    }
+
+    return "🌦️";
+
+}
+
+
+// ==============================
+// INICIAR CLIMA
+// ==============================
+
+if (
+    document.getElementById("temperatura")
+) {
+
+    carregarClima();
+
+}
