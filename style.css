@@ -652,3 +652,120 @@ footer strong {
         text-align: center;
     }
 }
+
+/* =========================
+   PAINEL DO USUÁRIO
+========================= */
+
+.painel {
+    background: #fffdf8;
+    min-height: 600px;
+}
+
+.painel-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.painel-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.painel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.13);
+}
+
+.painel-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.painel-card h3 {
+    color: #4d2e1e;
+    margin-bottom: 18px;
+    font-size: 22px;
+}
+
+.perfil-info p {
+    margin-bottom: 10px;
+    color: #66574c;
+    word-break: break-word;
+}
+
+.perfil-info strong {
+    color: #3e2417;
+}
+
+.temperatura-painel {
+    font-size: 50px;
+    font-weight: bold;
+    color: #d9a441;
+    margin-bottom: 5px;
+}
+
+.texto-menor {
+    margin-top: 15px;
+    color: #77685c;
+    font-size: 14px;
+}
+
+.btn-painel {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #5a351f;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-painel:hover {
+    background: #8a5a35;
+}
+
+.sair-container {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    text-align: center;
+}
+
+.btn-sair {
+    padding: 13px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #3e2417;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-sair:hover {
+    background: #5a351f;
+}
+
+
+@media (max-width: 900px) {
+
+    .painel-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .painel-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

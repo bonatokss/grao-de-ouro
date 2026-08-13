@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel | Grão Dourado</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        ☕ Grão <span>Dourado</span>
+    </div>
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Início
+                </a>
+            </li>
+
+            <li>
+                <a href="sobre.html">
+                    Sobre
+                </a>
+            </li>
+
+            <li>
+                <a href="recursos.html">
+                    Recursos
+                </a>
+            </li>
+
+            <li>
+                <a href="contato.html">
+                    Fale Conosco
+                </a>
+            </li>
+
+            <li>
+                <a href="painel.html" class="btn-cadastro active">
+                    Meu painel
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<section class="page-hero">
+
+    <h1>
+        Olá, <span id="nomeUsuario">Produtor</span>! 👋
+    </h1>
+
+    <p>
+        Bem-vindo ao seu painel do Grão Dourado.
+    </p>
+
+</section>
+
+
+<section class="painel">
+
+    <div class="section-title">
+
+        <h2>
+            Minha propriedade 🌱
+        </h2>
+
+        <p>
+            Confira suas informações.
+        </p>
+
+    </div>
+
+
+    <div class="painel-grid">
+
+
+        <!-- PERFIL -->
+
+        <div class="painel-card">
+
+            <div class="painel-icon">
+                👨‍🌾
+            </div>
+
+            <h3>
+                Meu perfil
+            </h3>
+
+            <div class="perfil-info">
+
+                <p>
+                    <strong>Nome:</strong>
+                    <span id="perfilNome">---</span>
+                </p>
+
+                <p>
+                    <strong>E-mail:</strong>
+                    <span id="perfilEmail">---</span>
+                </p>
+
+                <p>
+                    <strong>Telefone:</strong>
+                    <span id="perfilTelefone">---</span>
+                </p>
+
+                <p>
+                    <strong>Cidade:</strong>
+                    <span id="perfilCidade">---</span>
+                </p>
+
+                <p>
+                    <strong>Tipo:</strong>
+                    <span id="perfilTipo">---</span>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROPRIEDADE -->
+
+        <div class="painel-card">
+
+            <div class="painel-icon">
+                🚜
+            </div>
+
+            <h3>
+                Minha propriedade
+            </h3>
+
+            <div class="perfil-info">
+
+                <p>
+                    <strong>Propriedade:</strong>
+                    <span id="perfilPropriedade">
+                        Não informada
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Área:</strong>
+                    <span id="perfilArea">
+                        Não informada
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CLIMA -->
+
+        <div class="painel-card clima-painel">
+
+            <div class="painel-icon">
+                🌦️
+            </div>
+
+            <h3>
+                Clima
+            </h3>
+
+            <div class="temperatura-painel">
+                24°C
+            </div>
+
+            <p>
+                Condição demonstrativa
+            </p>
+
+            <p id="cidadeClima">
+                Ribeirão Claro - PR
+            </p>
+
+        </div>
+
+
+        <!-- ALERTAS -->
+
+        <div class="painel-card">
+
+            <div class="painel-icon">
+                ⚠️
+            </div>
+
+            <h3>
+                Alertas
+            </h3>
+
+            <p>
+                Nenhum alerta no momento.
+            </p>
+
+            <p class="texto-menor">
+                Futuramente, o sistema poderá
+                apresentar alertas climáticos
+                personalizados.
+            </p>
+
+        </div>
+
+
+        <!-- IA -->
+
+        <div class="painel-card">
+
+            <div class="painel-icon">
+                🤖
+            </div>
+
+            <h3>
+                Inteligência Artificial
+            </h3>
+
+            <p>
+                Analise imagens de folhas e frutos
+                para auxiliar na identificação de
+                possíveis problemas.
+            </p>
+
+            <button
+                class="btn-painel"
+                onclick="alert('A ferramenta de IA será adicionada futuramente!')">
+
+                Analisar café
+
+            </button>
+
+        </div>
+
+
+        <!-- HISTÓRICO -->
+
+        <div class="painel-card">
+
+            <div class="painel-icon">
+                📊
+            </div>
+
+            <h3>
+                Minha atividade
+            </h3>
+
+            <p>
+                Cadastro realizado em:
+            </p>
+
+            <strong id="dataCadastro">
+                ---
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="sair-container">
+
+        <button
+            id="btnSair"
+            class="btn-sair">
+
+            🚪 Sair da conta
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 <strong>Grão Dourado</strong> -
+        Tecnologia a favor da cafeicultura.
+    </p>
+
+    <p>
+        Ribeirão Claro - Paraná
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
